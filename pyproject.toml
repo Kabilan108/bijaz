@@ -1,0 +1,48 @@
+[project]
+name = "bijaz"
+version = "0.1.0"
+description = ""
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard]>=0.115.0",
+    "pydantic>=2.9.2",
+    "python-telegram-bot>=21.6",
+    "logfire[fastapi]>=1.0.0",
+    "click>=8.1.7",
+    "openai>=1.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "ipdb>=0.13.13",
+    "ipython-icat>=0.2.0",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+indent-width = 4
+exclude = [
+    ".direnv",
+    ".git",
+    ".ipynb_checkpoints",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    "build",
+    "dist",
+    "node_modules",
+]
+
+[tool.ruff.lint]
+ignore = ["E402", "F403"]
+fixable = ["ALL"]
+unfixable = []
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.format]
+line-ending = "auto"
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
